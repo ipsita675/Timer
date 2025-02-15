@@ -1,118 +1,108 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*font-family: "Roboto", serif;*/
     font-family: "Major Mono Display", serif;
 }
-body{
+body {
     background-color: #1b1b2f;
     color: #ffff00;
-}
-.container{
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-}
-.timer{
-    display: inline-block;
-    padding: 10px;
-    width: 600px;
-    box-sizing: border-box;
-}
-main{
-    width: 25rem;
-    height: 25rem;
-    border-radius: 50%;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-}
-h1{
-    font-size: 2rem;
-    margin: 20px auto;
-}
-.button-container{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-.pomodoro{
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+.timer {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
-    position: relative;
-    margin: 2.5rem 0;
+    max-width: 400px;
+    margin: auto;
+}
+main {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
     text-align: center;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.pomodoro {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background: #1b1b2f;
-    box-shadow: 20px 20px 42px #ffffff, -20px -20px 42px #ffff00 ;
-}
-.pomodoro::before{
-    content: " ";
-    position: absolute;
-    border: 10px solid #00aaff;
-    border-radius: 50%;
-    width:22rem;
-    height: 22rem;
-}
-.time{
-    font-size: 5rem !important;
-    margin: 20px auto;
-}
-.button-container{
-    margin-top: 20px;
+    box-shadow: 15px 15px 30px #ffffff, -15px -15px 30px #ffff00;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
-.button{
-    color: #00aaff;
+.pomodoro::before {
+    content: "";
+    position: absolute;
+    border: 6px solid #00aaff;
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+}
+.time {
+    font-size: 3.5rem;
+    margin: 10px auto;
+}
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+.button, .start, .stop {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button {
     background-color: #001f3f;
-    padding: 5px 5px;
-    margin: 5px;
+    color: #00aaff;
 }
 .button:hover {
-    background-color: #004080; 
-    color: #ffffff; 
-    box-shadow: 0 0 10px #00aaff; 
-    transition: all 0.1s ease-in-out; 
+    background-color: #004080;
+    color: #ffffff;
+    box-shadow: 0 0 10px #00aaff;
+    transition: all 0.1s ease-in-out;
 }
-.button.active{
-    background-color: #004080; 
-    color: #ffffff; 
-}
-.hidden{
-    display: block;
-}
-.timer-display{
-    font-size: 5rem;
+.start {
+    background-color: #219a52;
     color: white;
 }
-.buttons{
-    margin-top: 20px;
-}
-.start,.stop{
-    color: #00aaff;
-    background-color: #001f3f;
-    padding: 5px 5px;
-    margin: 5px;
-}
 .start:hover {
-    background-color: #219a52; 
-    color: #ffffff; 
-    box-shadow: 0 0 10px #219a52; 
-    transition: all 0.1s ease-in-out; 
+    box-shadow: 0 0 10px #219a52;
 }
-.stop:hover{
-    background-color: tomato; 
-    color: #ffffff; 
-    box-shadow: 0 0 10px tomato; 
-    transition: all 0.1s ease-in-out; 
+.stop {
+    background-color: tomato;
+    color: white;
 }
-#timer-msg{
+.stop:hover {
+    box-shadow: 0 0 10px tomato;
+}
+.timer-display {
+    font-size: 3rem;
+    color: white;
+}
+#timer-msg {
     color: #ffffff;
     background-color: tomato;
     display: none;
@@ -120,16 +110,37 @@ h1{
     font-size: 1rem;
     text-align: center;
 }
-/*responsiveness*/
-@media screen and (min-width:320px) and (max-width:600px){
-    .container{
-        transform: scale(0.9);
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
     }
-    .timer{
-        width: 500px;
+    .timer {
+        max-width: 90%;
+    }
+    main {
+        width: 15rem;
+        height: 15rem;
+    }
+    .pomodoro::before {
+        width: 85%;
+        height: 85%;
+    }
+    .time {
+        font-size: 2.5rem;
+    }
+    .button, .start, .stop {
+        font-size: 0.9rem;
+        padding: 8px 12px;
     }
 }
-
-
-
-  
+@media screen and (max-width: 480px) {
+    .time {
+        font-size: 2rem;
+    }
+    .button, .start, .stop {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+}
