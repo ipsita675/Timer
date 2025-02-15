@@ -61,43 +61,50 @@ main {
     margin: 10px auto;
 }
 .button-container {
+    margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 10px; /* Adds space between buttons */
+    flex-wrap: wrap; /* Ensures buttons don't overflow on smaller screens */
 }
+
 .button, .start, .stop {
-    padding: 10px 15px;
+    color: #00aaff;
+    background-color: #001f3f;
+    padding: 10px 20px;
+    margin: 5px;
     font-size: 1rem;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    text-align: center;
 }
-.button {
-    background-color: #001f3f;
-    color: #00aaff;
-}
+
 .button:hover {
     background-color: #004080;
     color: #ffffff;
     box-shadow: 0 0 10px #00aaff;
     transition: all 0.1s ease-in-out;
 }
-.start {
-    background-color: #219a52;
-    color: white;
+
+.button.active {
+    background-color: #004080;
+    color: #ffffff;
 }
+
 .start:hover {
+    background-color: #219a52;
+    color: #ffffff;
     box-shadow: 0 0 10px #219a52;
+    transition: all 0.1s ease-in-out;
 }
-.stop {
-    background-color: tomato;
-    color: white;
-}
+
 .stop:hover {
+    background-color: tomato;
+    color: #ffffff;
     box-shadow: 0 0 10px tomato;
+    transition: all 0.1s ease-in-out;
 }
+
 .timer-display {
     font-size: 3rem;
     color: white;
