@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer ⏰</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="timer-msg">Please select a timer before starting</div>
+    <div class="container">
+        <div class="timer">
+            <h1>Pomodoro Timer</h1>
+            <div class="button-container">
+                <button class="button" id="session">Pomodoro Session</button>
+                <button class="button" id="short">Short Break</button>
+                <button class="button" id="long">Long Break</button>
+            </div>
+            <main>
+                <div class="pomodoro">
+                    <div id="pomodoro-timer" class="timer-display" data-duration="25:00">
+                        <h1 class="time">25:00</h1>
+                    </div>
+                    <div id="short-timer" class="timer-display" data-duration="05:00">
+                        <h1 class="time">5:00</h1>
+                    </div>
+                    <div id="long-timer" class="timer-display" data-duration="10:00">
+                        <h1 class="time">10:00</h1>
+                    </div>
+                </div>
+            </main>
+            <div class="buttons">
+                <button class="start">START</button>
+                <button class="stop">STOP</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
